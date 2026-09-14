@@ -82,3 +82,63 @@ enviro365-investment-withdrawal-system
 │
 ├── pom.xml
 └── README.md
+
+
+# API Endpoints
+
+## Investors
+
+GET /api/investors
+
+## Portfolios
+
+GET /api/portfolios
+
+## Withdrawals
+
+GET /api/withdrawals
+
+POST /api/withdrawals
+
+Request Body:
+
+{
+  "portfolioId": 1,
+  "amount": 1000
+}
+
+## CSV Export
+
+GET /api/withdrawals/export
+
+# How To Run
+
+## Backend
+
+mvn spring-boot:run
+
+Backend URL:
+
+http://localhost:8080
+
+## Frontend
+
+cd withdrawal-ui
+
+npm install
+
+npm start
+
+Frontend URL:
+
+http://localhost:3000
+
+# Features
+
+- View Investor Portfolios
+- Create Withdrawal Requests
+- Business Rule Validation
+- Withdrawal History
+- CSV Export
+- React Dashboard
+- Global Exception Handling
