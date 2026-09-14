@@ -2,70 +2,84 @@
 
 ## Overview
 
-The Enviro365 Investment Withdrawal System is a full-stack application that enables investors to view investment portfolios, submit withdrawal requests, track withdrawal history, and export withdrawal records to CSV format.
+The Enviro365 Investment Withdrawal System is a full-stack web application developed using Spring Boot and React.
 
-The application was developed using Spring Boot for the backend and React for the frontend.
+The application allows investors to view their investment portfolios, create withdrawal requests, monitor withdrawal history, and export withdrawal records as CSV reports.
+
+The system implements business validation rules to ensure withdrawals comply with investment product requirements and portfolio limitations.
 
 ---
 
-## Features
+# Features
 
-### Portfolio Dashboard
+## Portfolio Dashboard
+
 - View available investment portfolios
-- Display portfolio balances
-- View portfolio information
+- View portfolio balances
+- Display portfolio product information
+- Track portfolio value changes after withdrawals
 
-### Withdrawal Management
+## Withdrawal Management
+
 - Create withdrawal requests
-- Validate withdrawal rules
-- Update portfolio balances automatically
-- Prevent invalid withdrawals
+- Validate business rules before processing withdrawals
+- Automatically update portfolio balances
+- Prevent invalid withdrawal requests
 
-### Withdrawal History
-- Track all withdrawals
-- View withdrawal amounts and dates
-- Display withdrawal records in a structured format
+## Withdrawal History
 
-### CSV Export
+- View all completed withdrawals
+- Track withdrawal amounts
+- Display withdrawal dates
+- Review transaction history
+
+## CSV Export
+
+- Export withdrawal records
 - Download withdrawal history as a CSV file
+- Generate reports for review and auditing purposes
 
 ---
 
-## Business Rules
+# Business Rules
 
 The system enforces the following rules:
 
-- A withdrawal amount cannot exceed the available portfolio balance.
-- A withdrawal amount cannot exceed 90% of the portfolio value.
-- Retirement fund withdrawals are only permitted for investors older than 65 years.
+- A withdrawal cannot exceed the available portfolio balance.
+- A withdrawal cannot exceed 90% of the portfolio value.
+- Retirement Fund withdrawals are only allowed for investors older than 65 years.
 - Invalid requests generate meaningful error messages.
 
 ---
 
-## Technologies Used
+# Technologies Used
 
-### Backend
+## Backend
+
 - Java
 - Spring Boot
 - Spring Data JPA
 - Maven
 - H2 Database
 
-### Frontend
+## Frontend
+
 - React
 - Axios
 - HTML
 - CSS
 
-### Tools
+## Development Tools
+
 - IntelliJ IDEA
+- Visual Studio Code
 - Postman
 - Git
 - GitHub
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
 enviro365-investment-withdrawal-system
@@ -82,6 +96,7 @@ enviro365-investment-withdrawal-system
 │
 ├── pom.xml
 └── README.md
+```
 
 ---
 
@@ -89,61 +104,117 @@ enviro365-investment-withdrawal-system
 
 ## Investors
 
+```http
 GET /api/investors
+```
+
+Returns all investors.
+
+---
 
 ## Portfolios
 
+```http
 GET /api/portfolios
+```
+
+Returns all investment portfolios.
+
+---
 
 ## Withdrawals
 
+### Get Withdrawal History
+
+```http
 GET /api/withdrawals
+```
 
+Returns a list of all withdrawals.
+
+### Create Withdrawal
+
+```http
 POST /api/withdrawals
+```
 
-Request Body:
+Example Request:
 
+```json
 {
   "portfolioId": 1,
   "amount": 1000
 }
+```
+
+---
 
 ## CSV Export
 
+```http
 GET /api/withdrawals/export
+```
+
+Downloads withdrawal history as a CSV file.
 
 ---
 
-# How To Run
+# Running the Application
 
 ## Backend
 
+Run the Spring Boot application:
+
+```bash
 mvn spring-boot:run
+```
+
+or run:
+
+```text
+WithdrawalSystemApplication.java
+```
+
+from IntelliJ IDEA.
 
 Backend URL:
 
+```text
 http://localhost:8080
-
-## Frontend
-
-cd withdrawal-ui
-
-npm install
-
-npm start
-
-Frontend URL:
-
-http://localhost:3000
+```
 
 ---
 
-# Features
+## Frontend
 
-- View Investor Portfolios
-- Create Withdrawal Requests
-- Business Rule Validation
-- Withdrawal History
-- CSV Export
-- React Dashboard
-- Global Exception Handling
+Navigate to the React application:
+
+```bash
+cd withdrawal-ui
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the application:
+
+```bash
+npm start
+```
+
+Frontend URL:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# Key Functionality Demonstrated
+
+✅ Portfolio Dashboard
+
+✅ Portfolio 
