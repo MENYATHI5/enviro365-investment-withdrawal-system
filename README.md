@@ -83,6 +83,7 @@ enviro365-investment-withdrawal-system
 ├── pom.xml
 └── README.md
 
+---
 
 # API Endpoints
 
@@ -111,6 +112,8 @@ Request Body:
 
 GET /api/withdrawals/export
 
+---
+
 # How To Run
 
 ## Backend
@@ -132,6 +135,8 @@ npm start
 Frontend URL:
 
 http://localhost:3000
+
+---
 
 # Features
 
